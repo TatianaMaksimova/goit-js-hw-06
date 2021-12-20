@@ -7,7 +7,7 @@ console.log('Number of categories:', categoryTitleEl.length);
 // const elQuan = titleElement.nextElementSibling.children;
 // console.log(`Elements: ${elQuan.length}`);
 
-const eachCategoryAndTheySiblingEl = document.querySelectorAll('h2').forEach((element, index) => {
+const eachCategoryAndTheySiblingEl = document.querySelectorAll('h2').forEach(element => {
   console.log(`Category: ${element.textContent}`);
   console.log(`Elements: ${element.nextElementSibling.children.length}`);
 });
