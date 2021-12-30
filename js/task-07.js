@@ -7,5 +7,5 @@ refs.inputEl.addEventListener('input', onSelectorMove);
 
 function onSelectorMove(params) {
   // console.dir(params.currentTarget.value);
-  return (refs.textEl.style.fontSize = `${params.currentTarget.value}px`);
+  refs.textEl.style.fontSize = `${params.currentTarget.value}px`;
 }
