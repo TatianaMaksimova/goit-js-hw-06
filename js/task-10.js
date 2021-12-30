@@ -1,22 +1,27 @@
-// Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество элементов в input и нажимает кнопку Создать, после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
+const refs = {
+  firstDiv: document.querySelector('#controls'),
+  number: document.querySelector('input'),
+  createBtn: document.querySelector('[data-create]'),
+  destroyBtn: document.querySelector('[data-destroy]'),
+  boxes: document.querySelector('#boxes'),
+};
 
-// <div id="controls">
-//   <input type="number" min="1" max="100" step="1" />
-//   <button type="button" data-create>Create</button>
-//   <button type="button" data-destroy>Destroy</button>
-// </div>
+const newElements = [];
 
-// <div id="boxes"></div>
-// Создай функцию createBoxes(amount), которая принимает один параметр - число. Функция создает столько <div>, сколько указано в amount и добавляет их в div#boxes.
+function createBoxes(amount) {
+  const elements = document.createElement('div');
+  console.log(elements);
+  newElements.push(elements);
+  // Принимает один параметр - число. Функция создает столько <div>, сколько указано в amount и добавляет их в div#boxes.
+  // Размеры самого первого <div> - 30px на 30px.
+  // Каждый элемент после первого, должен быть шире и выше предыдущего на 10px.
+  // Все элементы должены иметь случайный цвет фона в формате HEX.
+}
 
-// Размеры самого первого <div> - 30px на 30px.
-// Каждый элемент после первого, должен быть шире и выше предыдущего на 10px.
-// Все элементы должены иметь случайный цвет фона в формате HEX. Используй готовую функцию getRandomHexColor для получения цвета.
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// }
-// Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
+refs.boxes.append(...newElements);
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+
+function destroyBoxes() {}
