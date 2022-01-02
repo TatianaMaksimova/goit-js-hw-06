@@ -32,3 +32,16 @@ button {
 .gallery li {
   margin-right: 10px;
 }
+
+.div_boxes {
+  display: inline-block;
+  flex-wrap: wrap;
+
+  margin: 10px;
+  padding: 0;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: darkorange;
+}
