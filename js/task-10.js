@@ -11,18 +11,24 @@ refs.destroyBtn.addEventListener('click', destroyBoxes);
 
 // const newElements = [];
 
+refs.number.addEventListener('input', element => {
+  console.log(element.currentTarget.value);
+});
+
 function createBoxes(amount) {
   refs.number.addEventListener('input', element => {
-    console.log(element.currentTarget.value);
+    return element.currentTarget.value;
   });
 
-  const elements = document.createElement('div');
-  elements.classList.add('div_boxes');
-  elements.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  amount = element.currentTarget.value;
 
-  refs.boxes.append(elements);
+  for (let i = 1; i <= amount; i += 1) {
+    const elements = document.createElement('div');
+    elements.classList.add('div_boxes');
+    elements.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-  // for (let i = 1; i <= amount; i += 1) {}
+    refs.boxes.append(elements);
+  }
 }
 
 // Принимает один параметр - число. Функция создает столько <div>, сколько указано в amount и добавляет их в div#boxes.
