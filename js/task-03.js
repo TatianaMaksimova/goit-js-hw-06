@@ -15,13 +15,12 @@ const images = [
 
 const galleryEl = document.querySelector('.gallery');
 
-const addMarkupForImages = images.forEach(image => {
-  return galleryEl.insertAdjacentHTML(
-    'afterbegin',
-    `<li><img src="${image.url}" alt="${image.alt}" width="300px"></li>`,
-    `<li><img src="${image.url}" alt="${image.alt}" width="300px"></li>`,
-    `<li><img src="${image.url}" alt="${image.alt}" width="300px"></li>`,
-  );
-});
+const addMarkupForImages = images => {
+  return images.map(image => {
+    return `<li><img src="${image.url}" alt="${image.alt}" width="300px"></li>`;
+  });
+};
 
-// В задании 3 вам нужно сперва с помощью перебирающего метода массива создать массив шаблонных строк, явдяющих собою разметку для каждого тега ли, затем эти шаблонные строки объеденить в одну большую строку и вставить в разметку (за пределами перебирающего метода массива).
+const markupForImages = addMarkupForImages(images);
+
+galleryEl.insertAdjacentHTML('afterbegin', markupForImages.join(' '));
