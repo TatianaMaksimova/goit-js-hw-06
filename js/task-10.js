@@ -11,22 +11,21 @@ refs.destroyBtn.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
   let userNumber = refs.number.value;
+  let firstElementSize = 30;
+  let arrayElements = [];
 
-  for (let i = 1; i <= userNumber; i += 1) {
+  for (let i = 0; i < userNumber; i += 1) {
     const newElementDiv = document.createElement('div');
-    newElementDiv.classList.add('div_boxes');
+    newElementDiv.classList.add('div-boxes');
     newElementDiv.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-    newElementDiv.style.width = '30px';
-    newElementDiv.style.height = '30px';
-
-    console.log(newElementDiv.style.width);
-    console.log(newElementDiv.style.height);
-
-    refs.boxes.append(newElementDiv);
+    newElementDiv.style.width = `${firstElementSize + i * 10}px`;
+    newElementDiv.style.height = `${firstElementSize + i * 10}px`;
+    arrayElements.push(newElementDiv);
   }
+  return refs.boxes.append(...arrayElements);
 }
 
 function destroyBoxes() {
-  boxes.innerHTML = '';
+  refs.boxes.innerHTML = '';
 }
